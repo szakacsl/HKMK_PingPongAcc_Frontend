@@ -1,15 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { TouchableOpacity, StyleSheet, View } from 'react-native'
 import { Text } from 'react-native-paper'
 import Background from '../components/Background'
 import Logo from '../components/Logo'
 import Header from '../components/Header'
 import Button from '../components/Button'
-import TextInput from '../components/TextInput'
 import BackButton from '../components/BackButton'
 import { theme } from '../core/theme'
-import { emailValidator } from '../helpers/emailValidator'
-import { passwordValidator } from '../helpers/passwordValidator'
 
 export default function HomeScreen({ navigation }) {
   return (
@@ -18,6 +15,8 @@ export default function HomeScreen({ navigation }) {
       <Logo />
       <Header>Welcome guest.</Header>
       <Button mode="contained">Login</Button>
+      <Button mode="contained">Login</Button>
+      <Button mode="contained">Tips</Button>
       <View style={styles.row}>
         <Text>Whould you like more </Text>
         <TouchableOpacity
