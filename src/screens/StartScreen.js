@@ -13,7 +13,7 @@ export default function StartScreen({ navigation }) {
       <Paragraph>The easiest way for waste classification.</Paragraph>
       <Button
         mode="contained"
-        onPress={() => navigation.navigate('LoginScreen')}
+        onPress={() => navigation.navigate('HomeScreen')}
       >
         Login as guest
       </Button>
