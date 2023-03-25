@@ -25,7 +25,7 @@ export default function LoginScreen({ navigation }) {
     }
     navigation.reset({
       index: 0,
-      routes: [{ name: 'Dashboard' }],
+      routes: [{ name: 'HomeScreen' }],
     })
   }
 
@@ -66,11 +66,9 @@ export default function LoginScreen({ navigation }) {
         Login
       </Button>
       <View style={styles.row}>
-        <Text>Whould you like more </Text>
-        <TouchableOpacity
-          onPress={() => navigation.replace('MoreDetailScreen')}
-        >
-          <Text style={styles.link}>information?</Text>
+        <Text>Don’t have an account? </Text>
+        <TouchableOpacity onPress={() => navigation.replace('RegisterScreen')}>
+          <Text style={styles.link}>Sign up</Text>
         </TouchableOpacity>
       </View>
     </Background>

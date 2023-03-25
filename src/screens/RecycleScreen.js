@@ -8,7 +8,7 @@ import Header from '../components/Header'
 import Button from '../components/Button'
 import { theme } from '../core/theme'
 
-export default function HomeScreen({ navigation }) {
+export default function RecycleScreen({ navigation }) {
   return (
     <Background>
       <LogOut
@@ -19,6 +19,7 @@ export default function HomeScreen({ navigation }) {
           })
         }
       />
+      {/* <BackButton goBack={navigation.goBack} /> */}
       <Logo />
       <Header>Welcome guest.</Header>
       <Button
