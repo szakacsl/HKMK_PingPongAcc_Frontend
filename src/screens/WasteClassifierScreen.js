@@ -14,21 +14,9 @@ export default function HomeScreen({ navigation }) {
       <BackButton goBack={navigation.goBack} />
       <Logo />
       <Header>Welcome guest.</Header>
-      <Button
-        mode="contained"
-        onPress={() => navigation.navigate('WasteClassifierScreen')}
-      >
-        Waste Classifier
-      </Button>
-      <Button mode="contained" onPress={() => navigation.navigate('MapScreen')}>
-        Map
-      </Button>
-      <Button
-        mode="contained"
-        onPress={() => navigation.navigate('TipsScreen')}
-      >
-        Tips
-      </Button>
+      <Button mode="contained">Waste Classifier</Button>
+      <Button mode="contained">Map</Button>
+      <Button mode="contained">Tips</Button>
       <View style={styles.row}>
         <Text>Whould you like more </Text>
         <TouchableOpacity
