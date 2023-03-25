@@ -20,21 +20,18 @@ export default function HomeScreen({ navigation }) {
         }
       />
       <Logo />
-      <Header>Welcome guest.</Header>
+      <Header>Welcome!</Header>
       <Button
         mode="contained"
-        onPress={() => navigation.navigate('WasteClassifierScreen')}
+        onPress={() => navigation.navigate('RecycleScreen')}
       >
-        Waste Classifier
-      </Button>
-      <Button mode="contained" onPress={() => navigation.navigate('MapScreen')}>
-        Map
+        Recycle
       </Button>
       <Button
         mode="contained"
-        onPress={() => navigation.navigate('TipsScreen')}
+        onPress={() => navigation.navigate('DonationScreen')}
       >
-        Tips
+        Donation
       </Button>
       <View style={styles.row}>
         <Text>Whould you like more </Text>

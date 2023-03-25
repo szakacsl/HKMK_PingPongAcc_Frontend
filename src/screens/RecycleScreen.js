@@ -3,25 +3,17 @@ import { TouchableOpacity, StyleSheet, View } from 'react-native'
 import { Text } from 'react-native-paper'
 import Background from '../components/Background'
 import Logo from '../components/Logo'
-import LogOut from '../components/LogOut'
 import Header from '../components/Header'
 import Button from '../components/Button'
+import BackButton from '../components/BackButton'
 import { theme } from '../core/theme'
 
 export default function RecycleScreen({ navigation }) {
   return (
     <Background>
-      <LogOut
-        goBack={() =>
-          navigation.reset({
-            index: 0,
-            routes: [{ name: 'StartScreen' }],
-          })
-        }
-      />
-      {/* <BackButton goBack={navigation.goBack} /> */}
+      <BackButton goBack={navigation.goBack} />
       <Logo />
-      <Header>Welcome guest.</Header>
+      <Header>Recycle</Header>
       <Button
         mode="contained"
         onPress={() => navigation.navigate('WasteClassifierScreen')}
@@ -35,7 +27,7 @@ export default function RecycleScreen({ navigation }) {
         mode="contained"
         onPress={() => navigation.navigate('TipsScreen')}
       >
-        Tips
+        Quick Tips
       </Button>
       <View style={styles.row}>
         <Text>Whould you like more </Text>
