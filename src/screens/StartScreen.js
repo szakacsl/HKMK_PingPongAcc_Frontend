@@ -9,10 +9,8 @@ export default function StartScreen({ navigation }) {
   return (
     <Background>
       <Logo />
-      <Header>RBGRecycle</Header>
-      <Paragraph>
-        The easiest way for waste classification.
-      </Paragraph>
+      <Header>Recycle</Header>
+      <Paragraph>The easiest way for waste classification.</Paragraph>
       <Button
         mode="contained"
         onPress={() => navigation.navigate('LoginScreen')}

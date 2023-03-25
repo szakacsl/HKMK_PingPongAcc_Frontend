@@ -67,9 +67,7 @@ export default function LoginScreen({ navigation }) {
       </Button>
       <View style={styles.row}>
         <Text>Whould you like more </Text>
-        <TouchableOpacity
-          onPress={() => navigation.replace('MoreDetailScreen')}
-        >
+        <TouchableOpacity onPress={() => navigation.replace('RegisterScreen')}>
           <Text style={styles.link}>information?</Text>
         </TouchableOpacity>
       </View>
