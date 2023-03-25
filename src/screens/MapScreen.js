@@ -1,51 +1,40 @@
 import React from 'react'
-// import { WebViewLeaflet } from 'react-native-webview-leaflet'
+import MapView, { Marker } from 'react-native-maps'
+import { View } from 'react-native'
 import Background from '../components/Background'
 import Logo from '../components/Logo'
 import BackButton from '../components/BackButton'
 
-// const webViewRef = React.useRef(null)
-
-// const onMessageReceived = (message) => {
-//   // Handle messages received from the map view
-//   console.log(message)
-// }
-
-// const onMapReady = () => {
-//   // Send a message to the map view when it's ready
-//   webViewRef.current.postMessage('mapReady')
-// }
+const styles = {
+  container: {
+    flex: 1,
+  },
+  map: {
+    flex: 1,
+  },
+}
 
 export default function MapScreen({ navigation }) {
   return (
-    <Background>
-      <BackButton goBack={navigation.goBack} />
-      <Logo />
-      {/* <WebViewLeaflet
-        ref={webViewRef}
-        source={{ html: '<div id="mapid"></div>' }}
-        style={{ flex: 1 }}
-        onMessageReceived={onMessageReceived}
-        onMapReady={onMapReady}
-        mapOptions={{
-          center: [51.505, -0.09],
-          zoom: 13,
+    <View style={styles.container}>
+      <MapView
+        style={styles.map}
+        initialRegion={{
+          latitude: 46.770439,
+          longitude: 23.591423,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
         }}
-        markers={[
-          {
-            position: [51.505, -0.09],
-            icon: 'default',
-            title: 'Marker 1',
-            onClick: () => console.log('Marker 1 clicked'),
-          },
-          {
-            position: [51.496, -0.1],
-            icon: 'default',
-            title: 'Marker 2',
-            onClick: () => console.log('Marker 2 clicked'),
-          },
-        ]}
-      /> */}
-    </Background>
+      >
+        <Marker
+          coordinate={{
+            latitude: 46.770439,
+            longitude: 23.591423,
+          }}
+          title="Marker Title"
+          description="Marker Description"
+        />
+      </MapView>
+    </View>
   )
 }
