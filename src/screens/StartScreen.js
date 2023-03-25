@@ -9,21 +9,15 @@ export default function StartScreen({ navigation }) {
   return (
     <Background>
       <Logo />
-      <Header>Login Template</Header>
+      <Header>RBGRecycle</Header>
       <Paragraph>
-        The easiest way to start with your amazing application.
+        The easiest way for waste classification.
       </Paragraph>
       <Button
         mode="contained"
         onPress={() => navigation.navigate('LoginScreen')}
       >
-        Login
-      </Button>
-      <Button
-        mode="outlined"
-        onPress={() => navigation.navigate('RegisterScreen')}
-      >
-        Sign Up
+        Login as guest
       </Button>
     </Background>
   )
