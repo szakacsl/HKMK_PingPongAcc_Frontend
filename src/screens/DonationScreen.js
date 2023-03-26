@@ -3,25 +3,20 @@ import { TouchableOpacity, StyleSheet, View } from 'react-native'
 import { Text } from 'react-native-paper'
 import Background from '../components/Background'
 import Logo from '../components/Logo'
-import LogOut from '../components/LogOut'
 import Header from '../components/Header'
-import Button from '../components/Button'
 import { theme } from '../core/theme'
+import BackButton from '../components/BackButton'
+import { Picker } from '@react-native-picker/picker'
 
 export default function DonationScreen({ navigation }) {
   return (
     <Background>
-      <LogOut
-        goBack={() =>
-          navigation.reset({
-            index: 0,
-            routes: [{ name: 'StartScreen' }],
-          })
-        }
-      />
-      {/* <BackButton goBack={navigation.goBack} /> */}
+      <BackButton goBack={navigation.goBack} />
       <Logo />
       <Header>Donation</Header>
+
+      
+
       <View style={styles.row}>
         <Text>Whould you like more </Text>
         <TouchableOpacity

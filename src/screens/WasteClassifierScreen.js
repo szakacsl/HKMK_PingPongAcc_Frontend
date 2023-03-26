@@ -1,10 +1,6 @@
 import React, { useState } from 'react'
-import { TouchableOpacity, StyleSheet, View } from 'react-native'
+import { TouchableOpacity, StyleSheet, View, Image } from 'react-native'
 import { Text } from 'react-native-paper'
-import ImagePicker, {
-  launchCamera,
-  launchImageLibrary,
-} from 'react-native-image-picker'
 import Background from '../components/Background'
 import Logo from '../components/Logo'
 import Header from '../components/Header'
@@ -13,60 +9,8 @@ import BackButton from '../components/BackButton'
 import { theme } from '../core/theme'
 
 export default function WasteClassifierScreen({ navigation }) {
-  const [singleFile, setSingleFile] = useState(null)
   const [selectedImage, setSelectedImage] = useState(null)
-
-  const chooseImage = async () => {
-    // const options = {
-    //   title: 'Select Avatar',
-    //   storageOptions: {
-    //     skipBackup: true,
-    //     path: 'images',
-    //   },
-    // }
-
-    try {
-      const image = await launchImageLibrary()
-    } catch (e) {
-      console.log(e)
-    }
-  }
-
-  const onGallery = () => {
-    ImagePicker.openPicker({
-      width: 300,
-      height: 400,
-      cropping: true,
-    }).then((image) => {
-      console.log(image)
-    })
-  }
-
-  const uploadImage = async () => {
-    // Check if any file is selected or not
-    if (singleFile != null) {
-      // If file selected then create FormData
-      const fileToUpload = singleFile
-      const data = new FormData()
-      data.append('name', 'Image Upload')
-      data.append('file_attachment', fileToUpload)
-      // Please change file upload URL
-      const res = await fetch('http://localhost/upload.php', {
-        method: 'post',
-        body: data,
-        headers: {
-          'Content-Type': 'multipart/form-data; ',
-        },
-      })
-      const responseJson = await res.json()
-      if (responseJson.status === 1) {
-        alert('Upload Successful')
-      }
-    } else {
-      // If no file selected the show alert
-      alert('Please Select File first')
-    }
-  }
+  const [classifiedImage, setClassifiedImage] = useState(null)
 
   return (
     <Background>
@@ -74,23 +18,22 @@ export default function WasteClassifierScreen({ navigation }) {
       <Logo />
       <Header>Waste classifier.</Header>
       {/* Showing the data of selected Single file */}
-      {singleFile != null ? (
-        <Text style={styles.textStyle}>
-          File Name: {singleFile.name ? singleFile.name : ''}
-          {'\n'}
-          Type: {singleFile.type ? singleFile.type : ''}
-          {'\n'}
-          File Size: {singleFile.size ? singleFile.size : ''}
-          {'\n'}
-          URI: {singleFile.uri ? singleFile.uri : ''}
-          {'\n'}
-        </Text>
+      {selectedImage != null ? (
+        <>
+          <Image
+            source={require('../assets/picture.png')}
+            style={styles.image}
+          />
+          <Text>File name: picture34.jpg</Text>
+          <Text>Size: 1.2 mb</Text>
+        </>
       ) : null}
-      <Button mode="contained" onPress={chooseImage}>
+      {classifiedImage != null ? <Text>Class: 1_polyethylene_PET</Text> : null}
+      <Button mode="contained" onPress={() => setSelectedImage(1)}>
         Select Image
       </Button>
-      <Button mode="contained" onPress={uploadImage}>
-        Upload Image
+      <Button mode="contained" onPress={() => setClassifiedImage(1)}>
+        Upload and Classify
       </Button>
       <View style={styles.row}>
         <Text>Whould you like more </Text>
@@ -126,5 +69,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     padding: 20,
+  },
+  image: {
+    width: 200,
+    height: 200,
+    marginBottom: 8,
   },
 })
