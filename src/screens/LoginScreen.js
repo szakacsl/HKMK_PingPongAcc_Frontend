@@ -10,6 +10,7 @@ import BackButton from '../components/BackButton'
 import { theme } from '../core/theme'
 import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
+import YourScore from '../components/YourScore'
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState({ value: '', error: '' })
@@ -31,6 +32,7 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <Background>
+      <YourScore />
       <BackButton goBack={navigation.goBack} />
       <Logo />
       <Header>Welcome back.</Header>

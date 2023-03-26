@@ -5,10 +5,12 @@ import Logo from '../components/Logo'
 import Header from '../components/Header'
 import BackButton from '../components/BackButton'
 import { theme } from '../core/theme'
+import YourScore from '../components/YourScore'
 
 export default function MoreDetailScreen({ navigation }) {
   return (
     <Background>
+      <YourScore />
       <BackButton goBack={navigation.goBack} />
       <Logo />
       <Header>

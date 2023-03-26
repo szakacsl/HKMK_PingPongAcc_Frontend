@@ -7,6 +7,7 @@ import LogOut from '../components/LogOut'
 import Header from '../components/Header'
 import Button from '../components/Button'
 import { theme } from '../core/theme'
+import YourScore from '../components/YourScore'
 
 export default function HomeScreen({ navigation }) {
   return (
@@ -19,6 +20,7 @@ export default function HomeScreen({ navigation }) {
           })
         }
       />
+      <YourScore />
       <Logo />
       <Header>Welcome!</Header>
       <Button
@@ -27,12 +29,34 @@ export default function HomeScreen({ navigation }) {
       >
         Recycle
       </Button>
+      <Text style={{ fontWeight: 'bold' }}>
+        “There is no such thing as 'away'”
+      </Text>
+      <Text>
+        If you throw something it should be placed somewhere. But where is that?
+        Use our recycling symbol classifier to find out!
+      </Text>
+      <Text />
       <Button
         mode="contained"
         onPress={() => navigation.navigate('DonationScreen')}
       >
         Donation
       </Button>
+      <Text style={{ fontWeight: 'bold' }}>
+        “One man's trash is another man's treasure”
+      </Text>
+
+      <Text>
+        Could your item be used by someone? By donating it can find a new
+        purpose.
+      </Text>
+
+      <Text />
+      <Text />
+      <Text />
+      <Text />
+      <Text />
       <View style={styles.row}>
         <Text>Whould you like more </Text>
         <TouchableOpacity

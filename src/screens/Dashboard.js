@@ -4,11 +4,13 @@ import Logo from '../components/Logo'
 import Header from '../components/Header'
 import Paragraph from '../components/Paragraph'
 import Button from '../components/Button'
+import YourScore from '../components/YourScore'
 
 export default function Dashboard({ navigation }) {
   return (
     <Background>
       <Logo />
+      <YourScore />
       <Header>Let’s start</Header>
       <Paragraph>
         Your amazing app starts here. Open you favorite code editor and start

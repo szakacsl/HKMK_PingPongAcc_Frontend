@@ -8,6 +8,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 
 // Import Document Picker
 import DocumentPicker from 'react-native-document-picker'
+import YourScore from '../components/YourScore'
 
 export default function FileUpload({ navigation }) {
   const [singleFile, setSingleFile] = useState(null)
@@ -98,6 +99,7 @@ export default function FileUpload({ navigation }) {
           {'\n'}
         </Text>
       ) : null}
+      <YourScore />
       <TouchableOpacity
         style={styles.buttonStyle}
         activeOpacity={0.5}

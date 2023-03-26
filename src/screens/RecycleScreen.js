@@ -7,10 +7,12 @@ import Header from '../components/Header'
 import Button from '../components/Button'
 import BackButton from '../components/BackButton'
 import { theme } from '../core/theme'
+import YourScore from '../components/YourScore'
 
 export default function RecycleScreen({ navigation }) {
   return (
     <Background>
+      <YourScore />
       <BackButton goBack={navigation.goBack} />
       <Logo />
       <Header>Recycle</Header>
@@ -20,15 +22,26 @@ export default function RecycleScreen({ navigation }) {
       >
         Waste Classifier
       </Button>
+      <Text>Recycling symbol classifier</Text>
+      <Text />
       <Button mode="contained" onPress={() => navigation.navigate('MapScreen')}>
         Map
       </Button>
+      <Text>Map of the nearest garbage collection points</Text>
+      <Text />
       <Button
         mode="contained"
         onPress={() => navigation.navigate('TipsScreen')}
       >
         Quick Tips
       </Button>
+      <Text>Learn new ways to be sustainable</Text>
+      <Text />
+      <Text />
+      <Text />
+      <Text />
+      <Text />
+  
       <View style={styles.row}>
         <Text>Whould you like more </Text>
         <TouchableOpacity

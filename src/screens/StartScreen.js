@@ -4,10 +4,12 @@ import Logo from '../components/Logo'
 import Header from '../components/Header'
 import Button from '../components/Button'
 import Paragraph from '../components/Paragraph'
+import YourScore from '../components/YourScore'
 
 export default function StartScreen({ navigation }) {
   return (
     <Background>
+      <YourScore />
       <Logo />
       <Header>Recycle</Header>
       <Paragraph>The easiest way for waste classification.</Paragraph>

@@ -7,6 +7,7 @@ import Header from '../components/Header'
 import Button from '../components/Button'
 import BackButton from '../components/BackButton'
 import { theme } from '../core/theme'
+import YourScore from '../components/YourScore'
 
 export default function WasteClassifierScreen({ navigation }) {
   const [selectedImage, setSelectedImage] = useState(null)
@@ -14,6 +15,7 @@ export default function WasteClassifierScreen({ navigation }) {
 
   return (
     <Background>
+      <YourScore />
       <BackButton goBack={navigation.goBack} />
       <Logo />
       <Header>Waste classifier.</Header>
